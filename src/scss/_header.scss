@@ -1,0 +1,31 @@
+.nav--shell {
+  display: flex;
+  justify-content: center;
+  background-color: goldenrod;
+  height: 150px;
+}
+.nav--left {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+
+.logo--ph {
+  width: 150px;
+  height: 150px;
+  border: 3px solid black;
+}
+.nav--right {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.nav--link {
+  width: 130px;
+  height: 100%;
+  background-color: brown;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
