@@ -1,5 +1,14 @@
 import { clearTable } from "./src/modules/clearTable.js";
 import { tossCards } from "./src/modules/tossCards.js";
+import { toggleAccordion } from "./src/modules/accordion.js";
+
+const accordion = document.querySelector(".accordion");
+
+accordion.addEventListener("click", (e) => {
+  const activePanel = e.target.closest(".accordion-panel");
+  if (!activePanel) return;
+  toggleAccordion(activePanel);
+});
 
 let pauseForCards = 1250;
 

@@ -96,6 +96,7 @@ ul {
   }
   &.offset--right {
     transform: translateX(100vw);
+    height: 0;
   }
 
   &.faded--down {
