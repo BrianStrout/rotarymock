@@ -2,6 +2,8 @@
 @use "header";
 @use "root";
 @use "landing";
+@use "cardTransitions";
+@use "gallery";
 
 .site--shell {
   position: relative;
@@ -12,7 +14,7 @@
     "head"
     "body"
     "footer";
-  grid-template-rows: 150px 75vh 15vh;
+  grid-template-rows: 150px 1fr 15vh;
 }
 
 .header {
@@ -25,8 +27,43 @@
   align-items: center;
 }
 .content--shell {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(85vh - 150px);
   background-color: rgb(19, 206, 235);
   grid-area: body;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  // overflow: scroll;
+  // padding-bottom: 150px;
+}
+
+.trees {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  min-height: 150px;
+  background-image: url("./src/images/trees.png");
+}
+
+.lift--and-drop {
+  animation: liftanddrop 1s cubic-bezier(0.43, -0.24, 0, 0.16) 0s 1 forwards;
+}
+@keyframes liftanddrop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(20deg);
+  }
+}
+
+.exam {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
 }

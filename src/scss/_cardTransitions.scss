@@ -1,0 +1,117 @@
+.card--table {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.cardL {
+  position: absolute;
+  left: -100vw;
+  width: 300px;
+  height: 400px;
+  background-color: rgb(239, 239, 239);
+  border: 3px solid black;
+
+  animation: cardThrowLeft 1.75s linear 0s 1 forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1%;
+
+  justify-content: flex-start;
+  .cardL--inner {
+    width: 90%;
+    // border-radius: 15px;
+    aspect-ratio: 1/1;
+    background-color: black;
+    background-image: url("./src/images/photo1.jpeg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
+  }
+}
+.cardR {
+  position: absolute;
+  right: 100vw;
+  width: 300px;
+  height: 400px;
+  background-color: rgb(239, 239, 239);
+  border: 3px solid black;
+  // border-radius: 15px;
+  animation: cardThrowRight 1.75s linear 0.75s 1 forwards;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1%;
+
+  justify-content: flex-start;
+  .cardR--inner {
+    width: 90%;
+    // border-radius: 15px;
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    background-color: black;
+    background-image: url("./src/images/photo2.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes cardThrowLeft {
+  0% {
+    left: 0vw;
+    scale: 200%;
+    rotate: 0deg;
+  }
+  15% {
+    left: calc(50vw - 150px);
+    scale: 100%;
+    rotate: -20deg;
+  }
+  75% {
+    left: calc(50vw - 150px);
+    top: 0vh;
+    scale: 100%;
+    rotate: -20deg;
+  }
+  100% {
+    left: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: -180deg;
+  }
+}
+
+@keyframes cardThrowRight {
+  0% {
+    right: 0vw;
+    scale: 200%;
+    rotate: 0deg;
+  }
+  15% {
+    right: calc(50vw - 150px);
+    scale: 100%;
+    rotate: 20deg;
+  }
+  50% {
+    right: calc(50vw - 150px);
+    top: 0;
+    scale: 100%;
+    rotate: 20deg;
+  }
+  75% {
+    right: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: 180deg;
+  }
+  100% {
+    right: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: 180deg;
+  }
+}

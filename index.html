@@ -12,7 +12,7 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
-    <title>Camp Rotary</title>
+    <title>Camp content--shown Rotary</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -22,51 +22,121 @@
 
         <div class="nav--shell">
           <div class="nav--left">
-            <div id="navmis" class="nav--link transition--cover offset--up">
-              Camp!
+            <div id="navcam" class="nav--link transition--cover offset--up">
+              Camp
             </div>
-            <div id="navres" class="nav--link transition--cover offset--up">
+            <div id="navgal" class="nav--link transition--cover offset--up">
               Gallery!
             </div>
-            <div id="navhero" class="nav--hero transition--cover shrunk"></div>
-            <div id="navgal" class="nav--link transition--cover offset--up">
-              Information!
+
+            <div id="navinf" class="nav--link transition--cover offset--up">
+              Info!
             </div>
           </div>
           <div class="logo--ph"></div>
           <div class="nav--right">
-            <div id="navmis" class="nav--link transition--cover offset--up">
+            <div id="navget" class="nav--link transition--cover offset--up">
               Get Here!
             </div>
-            <div id="navres" class="nav--link transition--cover offset--up">
+            <div id="navcon" class="nav--link transition--cover offset--up">
               Contact Us!
             </div>
-            <div id="navhero" class="nav--hero transition--cover shrunk"></div>
-            <div id="navgal" class="nav--link transition--cover offset--up">
+
+            <div id="navdon" class="nav--link transition--cover offset--up">
               Donate!
             </div>
           </div>
         </div>
       </div>
-      <div class="content--shell"></div>
-      <footer>
-        <div class="footer--address">
-          <h2 class="b">Camp Rotary</h2>
-          372 IpswichRd.Boxford, MA 01921
-          <br />978-717-5590(offseason) <br />978-352-9952(summer)
+      <div class="content--shell">
+        <div class="gallery transition--cover offset--upA gallery--case">
+          <div class="gallery transition--cover offset--up video--case"></div>
+          <div class="gallery transition--cover offset--up gallery--gram"></div>
         </div>
-        <div class="link--box">
-          <div id="linkig"></div>
-          <div id="linkfb"></div>
-          <div id="linkdonate"></div>
-          <div id="linkaca"></div>
-          <div id="linkmca"></div>
+        <div class="information transition--cover offset--upA">information</div>
+        <div class="location transition--cover offset--upA">location</div>
+        <div class="contact transition--cover offset--upA">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="name"
+                name="name"
+                class="form-control"
+                id="formName"
+                placeholder="enter your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="formEmail"
+                placeholder="enter your email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                class="form-control"
+                id="formMessage"
+                name="message"
+                rows="5"
+              ></textarea>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">!</button>
+          </form>
+        </div>
+        <div class="donate transition--cover offset--upA">donate</div>
+
+        <div id="cardTable" class="card--table"></div>
+        <div class="photo--row">
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+          <div class="camp content--shown offset--up photo--intro-thumb"></div>
+        </div>
+        <div class="camp content--shown offset--right intro--blurb-container">
+          <div class="intro--blurb">
+            Camp Rotary is a private, nonprofit, educational, independent, co-ed
+            overnight camp for kids ages 7 - 15. The camp has a rich history
+            dating back to 1921 when it was founded as a service project of the
+            Lynn Rotary Club. Although the majority of our campers come from the
+            northeastern section of Massachusetts, there are campers from many
+            other states that make the trip each summer.
+          </div>
+          <div class="intro--photo">camper photo</div>
+        </div>
+        <div class="cta--lg">Enroll Now!</div>
+        <div class="camp camp--updates content--shown">updates go here</div>
+        <div class="camp trees"></div>
+      </div>
+
+      <footer>
+        <div class="z--pad">
+          <div class="footer--address">
+            <h2 class="b">Camp Rotary</h2>
+            372 Ipswich Rd.<br />Boxford, MA 01921 <br />978-717-5590(off
+            season) <br />978-352-9952(summer)
+          </div>
+          <div class="link--box">
+            <div id="linkig"></div>
+            <div id="linkfb"></div>
+            <div id="linkdonate"></div>
+            <div id="linkaca"></div>
+            <div id="linkmca"></div>
+          </div>
         </div>
       </footer>
     </div>
   </body>
 </html>
 
-<div class="navigation mobile--adjuster">
-  <div id="navcon" class="nav--link transition--cover offset--up">Contact</div>
-</div>
+<script src="./index.js" type="module"></script>

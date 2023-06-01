@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@
   --landscape: rgba(0, 128, 0, 0.3);
   --skillsetfont: rgba(51, 51, 51, 0.243);
   --paper: #f5f5e6;
-  --header-font: "Buda", cursive;
+  --header-font: "Luckiest Guy", cursive;
   --letter-font: "Libre Baskerville", serif;
 
   --bad-input-text: "Hi! Please fill all sections out";
@@ -64,44 +65,47 @@ ul {
   opacity: 0;
 }
 
-// .transition--cover {
-//   .offset--down {
-//     transition: none;
-//     transform: translateY(100vh);
-//   }
+.transition--cover {
+  .offset--down {
+    transition: none;
+    transform: translateY(100vh);
+  }
 
-//   .offset--up {
-//     transform: translateY(-100vh);
-//   }
+  .offset--up {
+    transform: translateY(-100vh);
+  }
 
-//   &.offset--up {
-//     transform: translateY(-100vh);
-//   }
-//   &.offset--upS {
-//     transform: translateY(-350vh);
-//   }
-//   &.offset--down {
-//     transform: translateY(100vh);
-//   }
-//   &.offset--left-soft {
-//     transform: translateX(-120%);
-//     opacity: 0;
-//   }
-//   &.offset--left {
-//     transform: translateX(-100vw);
-//   }
-//   &.offset--right {
-//     transform: translateX(100vw);
-//   }
+  &.offset--up {
+    transform: translateY(-100vh);
+  }
+  &.offset--upA {
+    top: -100vh;
+  }
+  &.offset--upS {
+    transform: translateY(-350vh);
+  }
+  &.offset--down {
+    transform: translateY(100vh);
+  }
+  &.offset--left-soft {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  &.offset--left {
+    transform: translateX(-100vw);
+  }
+  &.offset--right {
+    transform: translateX(100vw);
+  }
 
-//   &.faded--down {
-//     transform: translateY(100%);
-//     opacity: 0%;
-//   }
-//   &.shrunk {
-//     scale: 0;
-//   }
-// }
+  &.faded--down {
+    transform: translateY(100%);
+    opacity: 0%;
+  }
+  &.shrunk {
+    scale: 0;
+  }
+}
 
 //CSS
 @media all and (max-width: 1023px) and (orientation: portrait) {

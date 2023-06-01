@@ -1,24 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 footer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: footer;
+}
+
+.z--pad {
+  position: absolute;
+  z-index: 90;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgb(250, 9, 49);
-  grid-area: footer;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .footer--address {
-  border: 1px solid black;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
 .link--box {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
 }
 .link--box > div {
   width: 100px;
@@ -37,6 +47,7 @@ footer {
   width: 30vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .logo--ph {
@@ -49,16 +60,24 @@ footer {
   width: 30vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .nav--link {
   width: 130px;
-  height: 100%;
-  background-color: brown;
+  height: 90%;
   margin: 0px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--header-font);
+  font-size: 1.5rem;
+  text-align: center;
+}
+.nav--link:hover {
+  border-radius: 5px;
+  font-size: 1.6rem;
+  background-color: rgba(240, 248, 255, 0.521);
 }
 
 * {
@@ -84,7 +103,7 @@ footer {
   --landscape: rgba(0, 128, 0, 0.3);
   --skillsetfont: rgba(51, 51, 51, 0.243);
   --paper: #f5f5e6;
-  --header-font: "Buda", cursive;
+  --header-font: "Luckiest Guy", cursive;
   --letter-font: "Libre Baskerville", serif;
   --bad-input-text: "Hi! Please fill all sections out";
   --copy-svg: url("data:image/svg+xml, %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='15px' height='15px' viewBox='0 0 115.77 122.88' style='enable-background:new 0 0 115.77 122.88' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill-rule:evenodd;clip-rule:evenodd;%7D%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M89.62,13.96v7.73h12.19h0.01v0.02c3.85,0.01,7.34,1.57,9.86,4.1c2.5,2.51,4.06,5.98,4.07,9.82h0.02v0.02 v73.27v0.01h-0.02c-0.01,3.84-1.57,7.33-4.1,9.86c-2.51,2.5-5.98,4.06-9.82,4.07v0.02h-0.02h-61.7H40.1v-0.02 c-3.84-0.01-7.34-1.57-9.86-4.1c-2.5-2.51-4.06-5.98-4.07-9.82h-0.02v-0.02V92.51H13.96h-0.01v-0.02c-3.84-0.01-7.34-1.57-9.86-4.1 c-2.5-2.51-4.06-5.98-4.07-9.82H0v-0.02V13.96v-0.01h0.02c0.01-3.85,1.58-7.34,4.1-9.86c2.51-2.5,5.98-4.06,9.82-4.07V0h0.02h61.7 h0.01v0.02c3.85,0.01,7.34,1.57,9.86,4.1c2.5,2.51,4.06,5.98,4.07,9.82h0.02V13.96L89.62,13.96z M79.04,21.69v-7.73v-0.02h0.02 c0-0.91-0.39-1.75-1.01-2.37c-0.61-0.61-1.46-1-2.37-1v0.02h-0.01h-61.7h-0.02v-0.02c-0.91,0-1.75,0.39-2.37,1.01 c-0.61,0.61-1,1.46-1,2.37h0.02v0.01v64.59v0.02h-0.02c0,0.91,0.39,1.75,1.01,2.37c0.61,0.61,1.46,1,2.37,1v-0.02h0.01h12.19V35.65 v-0.01h0.02c0.01-3.85,1.58-7.34,4.1-9.86c2.51-2.5,5.98-4.06,9.82-4.07v-0.02h0.02H79.04L79.04,21.69z M105.18,108.92V35.65v-0.02 h0.02c0-0.91-0.39-1.75-1.01-2.37c-0.61-0.61-1.46-1-2.37-1v0.02h-0.01h-61.7h-0.02v-0.02c-0.91,0-1.75,0.39-2.37,1.01 c-0.61,0.61-1,1.46-1,2.37h0.02v0.01v73.27v0.02h-0.02c0,0.91,0.39,1.75,1.01,2.37c0.61,0.61,1.46,1,2.37,1v-0.02h0.01h61.7h0.02 v0.02c0.91,0,1.75-0.39,2.37-1.01c0.61-0.61,1-1.46,1-2.37h-0.02V108.92L105.18,108.92z'/%3E%3C/g%3E%3C/svg%3E");
@@ -132,6 +151,43 @@ ul {
   opacity: 0;
 }
 
+.transition--cover .offset--down {
+  transition: none;
+  transform: translateY(100vh);
+}
+.transition--cover .offset--up {
+  transform: translateY(-100vh);
+}
+.transition--cover.offset--up {
+  transform: translateY(-100vh);
+}
+.transition--cover.offset--upA {
+  top: -100vh;
+}
+.transition--cover.offset--upS {
+  transform: translateY(-350vh);
+}
+.transition--cover.offset--down {
+  transform: translateY(100vh);
+}
+.transition--cover.offset--left-soft {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+.transition--cover.offset--left {
+  transform: translateX(-100vw);
+}
+.transition--cover.offset--right {
+  transform: translateX(100vw);
+}
+.transition--cover.faded--down {
+  transform: translateY(100%);
+  opacity: 0%;
+}
+.transition--cover.shrunk {
+  scale: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .h {
     font-family: var(--letter-font);
@@ -143,13 +199,207 @@ ul {
     margin-left: 2rem;
   }
 }
+.photo--row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo--intro-thumb {
+  width: 12.5%;
+  aspect-ratio: 1/1;
+  border: 3px dashed black;
+  transform: translateY(0);
+  transition: all 0.7s ease-out;
+}
+
+.intro--blurb-container {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+}
+
+.intro--photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: blueviolet;
+}
+
+.cta--lg {
+  width: 200px;
+  min-height: 80px;
+  background-color: yellow;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--header-font);
+  font-size: 1.8rem;
+}
+
+.camp--updates {
+  width: 80vw;
+  min-height: 400px;
+  background-color: lightcoral;
+}
+
+.card--table {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.cardL {
+  position: absolute;
+  left: -100vw;
+  width: 300px;
+  height: 400px;
+  background-color: rgb(239, 239, 239);
+  border: 3px solid black;
+  animation: cardThrowLeft 1.75s linear 0s 1 forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1%;
+  justify-content: flex-start;
+}
+.cardL .cardL--inner {
+  width: 90%;
+  aspect-ratio: 1/1;
+  background-color: black;
+  background-image: url("./src/images/photo1.jpeg");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid black;
+}
+
+.cardR {
+  position: absolute;
+  right: 100vw;
+  width: 300px;
+  height: 400px;
+  background-color: rgb(239, 239, 239);
+  border: 3px solid black;
+  animation: cardThrowRight 1.75s linear 0.75s 1 forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1%;
+  justify-content: flex-start;
+}
+.cardR .cardR--inner {
+  width: 90%;
+  border: 1px solid black;
+  aspect-ratio: 1/1;
+  background-color: black;
+  background-image: url("./src/images/photo2.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes cardThrowLeft {
+  0% {
+    left: 0vw;
+    scale: 200%;
+    rotate: 0deg;
+  }
+  15% {
+    left: calc(50vw - 150px);
+    scale: 100%;
+    rotate: -20deg;
+  }
+  75% {
+    left: calc(50vw - 150px);
+    top: 0vh;
+    scale: 100%;
+    rotate: -20deg;
+  }
+  100% {
+    left: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: -180deg;
+  }
+}
+@keyframes cardThrowRight {
+  0% {
+    right: 0vw;
+    scale: 200%;
+    rotate: 0deg;
+  }
+  15% {
+    right: calc(50vw - 150px);
+    scale: 100%;
+    rotate: 20deg;
+  }
+  50% {
+    right: calc(50vw - 150px);
+    top: 0;
+    scale: 100%;
+    rotate: 20deg;
+  }
+  75% {
+    right: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: 180deg;
+  }
+  100% {
+    right: calc(50vw - 150px);
+    top: 100vh;
+    scale: 100%;
+    rotate: 180deg;
+  }
+}
+.gallery--case {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 500px;
+  background-color: brown;
+  transition: top 1s linear;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px;
+  gap: 20px;
+}
+.gallery--case .video--case {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+.gallery--case .gallery--gram {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.information,
+.location,
+.contact,
+.donate {
+  position: absolute;
+  top: 0;
+  width: 80vw;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+}
+
 .site--shell {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-areas: "head" "body" "footer";
-  grid-template-rows: 150px 75vh 15vh;
+  grid-template-rows: 150px 1fr 15vh;
 }
 
 .header {
@@ -163,8 +413,41 @@ ul {
 }
 
 .content--shell {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(85vh - 150px);
   background-color: rgb(19, 206, 235);
   grid-area: body;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.trees {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  min-height: 150px;
+  background-image: url("./src/images/trees.png");
+}
+
+.lift--and-drop {
+  animation: liftanddrop 1s cubic-bezier(0.43, -0.24, 0, 0.16) 0s 1 forwards;
+}
+
+@keyframes liftanddrop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(20deg);
+  }
+}
+.exam {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
 }/*# sourceMappingURL=index.css.map */

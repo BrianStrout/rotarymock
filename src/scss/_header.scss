@@ -8,6 +8,7 @@
   width: 30vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .logo--ph {
@@ -19,13 +20,23 @@
   width: 30vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .nav--link {
   width: 130px;
-  height: 100%;
-  background-color: brown;
+  height: 90%;
+  // background-color: brown;
   margin: 0px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--header-font);
+  font-size: 1.5rem;
+  text-align: center;
+  &:hover {
+    // border: 1px solid rgba(0, 0, 0, 0.535);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    background-color: rgba(240, 248, 255, 0.521);
+  }
 }

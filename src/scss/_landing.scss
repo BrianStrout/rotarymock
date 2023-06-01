@@ -1,0 +1,50 @@
+.camp {
+}
+.photo--row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.photo--intro-thumb {
+  width: 12.5%;
+  aspect-ratio: 1/1;
+  border: 3px dashed black;
+  transform: translateY(0);
+  transition: all 0.7s ease-out;
+
+  // &:nth-child()
+}
+
+.intro--blurb-container {
+  width: 100%;
+  height: fit-content;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+}
+.intro--blurb {
+}
+.intro--photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: blueviolet;
+}
+
+.cta--lg {
+  width: 200px;
+  min-height: 80px;
+  background-color: yellow;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--header-font);
+  font-size: 1.8rem;
+}
+.camp--updates {
+  width: 80vw;
+  min-height: 400px;
+  background-color: lightcoral;
+}
