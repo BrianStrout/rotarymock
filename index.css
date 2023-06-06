@@ -3,7 +3,7 @@
 footer {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100px;
   grid-area: footer;
 }
 
@@ -13,7 +13,7 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(250, 9, 49);
+  background-color: rgb(2, 3, 129);
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -22,7 +22,10 @@ footer {
 .footer--address {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .link--box {
@@ -219,15 +222,40 @@ ul {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: pink;
   display: flex;
   justify-content: center;
+  padding: 0px 15vw;
+}
+
+.intro--blurb {
+  display: flow-root;
+}
+.intro--blurb ul {
+  margin-left: 10%;
+}
+.intro--blurb .prog--list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.landing--girl {
+  width: 400px;
+  height: 300px;
+  float: right;
+  shape-outside: url("../src/images/landing_girl_rope.png");
 }
 
 .intro--photo {
   width: 100%;
   aspect-ratio: 1/1;
-  background-color: blueviolet;
+  border: 1px solid brown;
+}
+
+.d100w {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .cta--lg {
@@ -244,10 +272,54 @@ ul {
 }
 
 .camp--updates {
-  width: 80vw;
-  min-height: 400px;
-  background-color: lightcoral;
+  position: relative;
+  width: 70vw;
+  min-height: 300px;
   transition: height 0.25s ease-out;
+  margin-bottom: 50px;
+}
+.camp--updates .pop--up {
+  position: absolute;
+  top: -40%;
+  left: 10px;
+  width: 150px;
+  height: 200px;
+  border: 1px solid black;
+  transition: top 1s cubic-bezier(0.5, 0.08, 0.47, 1.62);
+  border-radius: 100px 100px 0 0;
+  opacity: 1;
+}
+.camp--updates .pop--up.unpopped {
+  top: 0;
+  opacity: 0;
+}
+.camp--updates .flex--index {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  border: 3px solid rgb(107, 68, 4);
+  border-radius: 10px;
+  background-color: rgb(255, 254, 242);
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+.camp--updates .flex--index.unfaded {
+  opacity: 0;
+  transform: scaleY(100px);
+}
+
+.unfaded {
+  opacity: 0;
+  transform: scaleY(100px);
+}
+
+.pop--in-container {
+  background-color: lawngreen;
+  width: 70%;
+  min-height: 300px;
+  transition: all 1s ease-out;
 }
 
 .card--table {
@@ -711,19 +783,23 @@ body {
   transform: rotate(45deg);
 }
 
+#pop1 {
+  background-image: url("./src/images/photo1.jpeg");
+  background-size: cover;
+}
+
 .site--shell {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-areas: "head" "body" "footer";
-  grid-template-rows: 150px 1fr 15vh;
+  grid-template-rows: 150px 1fr 100px;
 }
 
 .header {
   width: 100%;
   height: 100%;
-  background-color: pink;
   grid-area: head;
   display: flex;
   justify-content: center;
@@ -733,8 +809,8 @@ body {
 .content--shell {
   position: relative;
   width: 100%;
-  height: calc(85vh - 150px);
-  background-color: rgb(19, 206, 235);
+  height: calc(100vh - 250px);
+  background-color: rgb(255, 254, 242);
   grid-area: body;
   display: flex;
   flex-direction: column;
@@ -749,7 +825,7 @@ body {
   bottom: 0;
   width: 100%;
   min-height: 150px;
-  background-image: url("./src/images/trees.png");
+  background-image: url("./src/images/treesblue.png");
 }
 
 .lift--and-drop {

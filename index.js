@@ -1,6 +1,7 @@
 import { clearTable } from "./src/modules/clearTable.js";
 import { tossCards } from "./src/modules/tossCards.js";
 import { toggleAccordion } from "./src/modules/accordion.js";
+import { observeForFade, observeForPop } from "./src/modules/int-Obs.js";
 
 const accordion = document.querySelector(".accordion");
 
@@ -73,4 +74,16 @@ document.addEventListener("click", (e) => {
       validator();
       break;
   }
+});
+
+const popUps = document.querySelectorAll(".pop");
+// console.log(popUps);
+const fadeIns = document.querySelectorAll(".unfaded");
+
+popUps.forEach((popper) => {
+  observeForPop.observe(popper);
+});
+
+fadeIns.forEach((fade) => {
+  observeForFade.observe(fade);
 });

@@ -19,18 +19,45 @@
 .intro--blurb-container {
   width: 100%;
   height: fit-content;
-  background-color: pink;
+  // background-color: pink;
   display: flex;
   justify-content: center;
+  padding: 0px 15vw;
 }
 .intro--blurb {
+  // background-color: chartreuse;
+  display: flow-root;
+
+  ul {
+    margin-left: 10%;
+  }
+
+  .prog--list {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
 }
+
+.landing--girl {
+  width: 400px;
+  height: 300px;
+  float: right;
+  shape-outside: url("../src/images/landing_girl_rope.png");
+}
+
 .intro--photo {
   width: 100%;
   aspect-ratio: 1/1;
-  background-color: blueviolet;
+  border: 1px solid brown;
+  // background-image: url("../src/images/landing_girl_rope.png");
+  // background-size: cover;
 }
-
+.d100w {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .cta--lg {
   width: 200px;
   min-height: 80px;
@@ -44,8 +71,59 @@
   font-size: 1.8rem;
 }
 .camp--updates {
-  width: 80vw;
-  min-height: 400px;
-  background-color: lightcoral;
+  position: relative;
+  width: 70vw;
+  min-height: 300px;
+  // padding: 0px 15vw;
+  // background-color: lightcoral;
   transition: height 0.25s ease-out;
+  margin-bottom: 50px;
+
+  .pop--up {
+    position: absolute;
+    top: -40%;
+    left: 10px;
+    width: 150px;
+    height: 200px;
+    // background-color: pink;
+    border: 1px solid black;
+    transition: top 1s cubic-bezier(0.5, 0.08, 0.47, 1.62);
+    border-radius: 100px 100px 0 0;
+    opacity: 1;
+    &.unpopped {
+      top: 0;
+      opacity: 0;
+    }
+  }
+
+  .flex--index {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    border: 3px solid rgb(107, 68, 4);
+    border-radius: 10px;
+    background-color: rgb(255, 254, 242);
+    opacity: 1;
+    transition: all 1s ease-out;
+    &.unfaded {
+      opacity: 0;
+      transform: scaleY(100px);
+    }
+  }
+}
+.unfaded {
+  opacity: 0;
+  transform: scaleY(100px);
+}
+.pop--in-container {
+  background-color: lawngreen;
+  width: 70%;
+  min-height: 300px;
+  transition: all 1s ease-out;
+}
+.pop--in-left {
+}
+.pop--in-right {
 }
