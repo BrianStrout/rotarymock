@@ -2,11 +2,21 @@ import { clearTable } from "./src/modules/clearTable.js";
 import { tossCards } from "./src/modules/tossCards.js";
 import { toggleAccordion } from "./src/modules/accordion.js";
 import { observeForFade, observeForPop } from "./src/modules/int-Obs.js";
+import { setTable } from "./src/modules/setTable.js";
+import { timeOutWithObject } from "./src/modules/timer.js";
 
 const accordion = document.querySelector(".accordion");
 
+// console.log(accordion);
+
+const object = { first: 1000, b: 2000, c: 3000 };
+
+timeOutWithObject(object);
+
 accordion.addEventListener("click", (e) => {
   const activePanel = e.target.closest(".accordion-panel");
+  console.log(activePanel);
+
   if (!activePanel) return;
   toggleAccordion(activePanel);
 });
@@ -16,10 +26,21 @@ let pauseForCards = 1250;
 console.log("js");
 
 setTimeout(() => {
+  document.querySelector(".header").classList.remove("transition--cover");
+}, 3800);
+
+setTimeout(() => {
+  document.querySelector(".site--shell").classList.remove("over--grown");
+}, 6400);
+setTimeout(() => {
   Array.from(document.querySelectorAll(".nav--link")).forEach((link) => {
     link.classList.remove("transition--cover");
   });
-}, 1000);
+  document.querySelector(".z--pad").classList.remove("transition--cover");
+}, 7800);
+setTimeout(() => {
+  setTable("camp");
+}, 8000);
 
 document.addEventListener("click", (e) => {
   e.preventDefault();

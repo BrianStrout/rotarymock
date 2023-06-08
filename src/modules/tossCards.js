@@ -9,7 +9,7 @@ const tossCards = (delay) => {
 
     let card1Inner = document.createElement("div");
     card1Inner.classList.add("cardL--inner");
-    card1Inner.innerHTML = "photo";
+    card1Inner.innerHTML = "";
     card1.appendChild(card1Inner);
     let card1InnerW = document.createElement("h3");
     // card1InnerW.classList.add("cardL--inner");
@@ -18,7 +18,7 @@ const tossCards = (delay) => {
 
     let card2 = document.createElement("div");
     card2.classList.add("cardR");
-    card2.innerHTML = "photo2";
+    card2.innerHTML = "";
     cardTable.appendChild(card2);
     let card2Inner = document.createElement("div");
     card2Inner.classList.add("cardR--inner");

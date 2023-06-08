@@ -1,5 +1,5 @@
 const imgOptions = {
-  threshold: 0.6,
+  threshold: 0.45,
 };
 
 const observeForPop = new IntersectionObserver((entries) => {

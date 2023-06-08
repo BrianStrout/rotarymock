@@ -7,13 +7,22 @@ footer {
   grid-area: footer;
 }
 
+.trees--backdrop {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  min-height: 150px;
+  background-color: blue;
+}
+
 .z--pad {
   position: absolute;
   z-index: 90;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(2, 3, 129);
+  background-color: rgba(0, 63, 124, 0.95);
+  border-top: 2px solid rgb(0, 63, 124);
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -36,13 +45,44 @@ footer {
 .link--box > div {
   width: 100px;
   height: 100px;
-  border: 1px solid pink;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.link--box > div:hover {
+  scale: 1.1;
+}
+
+#linkig {
+  background-image: url("./src/icons/insta.png");
+}
+
+#linkfb {
+  background-image: url("./src/icons/facebook.png");
+}
+
+#linkdonate {
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: var(--header-font);
+}
+
+#linkaca {
+  background-image: url("./src/icons/aca.png");
+  background-size: contain;
+}
+
+#linkmca {
+  background-image: url("./src/icons/mca.png");
+  background-size: contain;
 }
 
 .nav--shell {
   display: flex;
   justify-content: center;
-  background-color: goldenrod;
   height: 150px;
 }
 
@@ -54,11 +94,32 @@ footer {
 }
 
 .logo--ph {
+  position: relative;
   width: 150px;
   height: 150px;
-  border: 3px solid black;
+}
+.logo--ph .nav--logo {
+  position: absolute;
+  top: -2000px;
+  width: 100%;
+  height: 100%;
+  background-image: url("./src/images/rotarylogo.png");
+  background-size: contain;
+  border-radius: 25px;
+  animation: logodrop 8s linear 0s forwards;
 }
 
+@keyframes logodrop {
+  0% {
+    top: -2000px;
+  }
+  90% {
+    top: -2000px;
+  }
+  100% {
+    top: 0px;
+  }
+}
 .nav--right {
   width: 30vw;
   display: flex;
@@ -68,7 +129,7 @@ footer {
 
 .nav--link {
   width: 130px;
-  height: 90%;
+  height: 130px;
   margin: 0px 10px;
   display: flex;
   justify-content: center;
@@ -76,11 +137,12 @@ footer {
   font-family: var(--header-font);
   font-size: 1.5rem;
   text-align: center;
+  transition: all 0.25s ease-out;
 }
 .nav--link:hover {
-  border-radius: 5px;
+  border-radius: 50%;
   font-size: 1.6rem;
-  background-color: rgba(240, 248, 255, 0.521);
+  background-color: yellow;
 }
 
 * {
@@ -94,7 +156,7 @@ footer {
   --main-text: "";
   --sub-text: "";
   --accent-color: #fff700;
-  --background-color: rgb(5, 255, 255);
+  --background-color: rgb(255, 254, 242);
   --ghost-color: rgb(230, 232, 223);
   --moody-background-color: rgb(100, 173, 173);
   --textcolor: black;
@@ -179,6 +241,7 @@ ul {
 }
 .transition--cover.offset--left {
   transform: translateX(-100vw);
+  height: 0;
 }
 .transition--cover.offset--right {
   transform: translateX(100vw);
@@ -203,19 +266,49 @@ ul {
     margin-left: 2rem;
   }
 }
+.camp {
+  transition: all 0.25s ease-out;
+}
+
 .photo--row {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
+  pointer-events: none;
 }
 
 .photo--intro-thumb {
   width: 12.5%;
   aspect-ratio: 1/1;
-  border: 3px dashed black;
   transform: translateY(0);
   transition: all 0.7s ease-out;
+  background-size: cover;
+  background-position: center;
+}
+.photo--intro-thumb:nth-child(1) {
+  background-image: url("./src/images/camp-rotary1.jpeg");
+}
+.photo--intro-thumb:nth-child(2) {
+  background-image: url("./src/images/camp-rotary2.jpeg");
+}
+.photo--intro-thumb:nth-child(3) {
+  background-image: url("./src/images/camp-rotary3.jpeg");
+}
+.photo--intro-thumb:nth-child(4) {
+  background-image: url("./src/images/camp-rotary4.jpeg");
+}
+.photo--intro-thumb:nth-child(5) {
+  background-image: url("./src/images/camp-rotary5.jpeg");
+}
+.photo--intro-thumb:nth-child(6) {
+  background-image: url("./src/images/camp-rotary6.jpeg");
+}
+.photo--intro-thumb:nth-child(7) {
+  background-image: url("./src/images/camp-rotary7.jpeg");
+}
+.photo--intro-thumb:nth-child(8) {
+  background-image: url("./src/images/camp-rotary8.jpeg");
 }
 
 .intro--blurb-container {
@@ -225,18 +318,57 @@ ul {
   display: flex;
   justify-content: center;
   padding: 0px 15vw;
+  font-size: 1.2rem;
 }
 
 .intro--blurb {
+  background: linear-gradient(to top right, transparent, transparent, transparent, green);
+  border-right: 5px solid black;
+  position: relative;
   display: flow-root;
 }
+.intro--blurb h1 {
+  margin: 1rem 0;
+}
 .intro--blurb ul {
+  position: relative;
   margin-left: 10%;
+  margin-top: 50px;
+}
+.intro--blurb ul.first--list:before {
+  position: absolute;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  content: "animation gif here";
+  border: 1px solid black;
+}
+.intro--blurb ul.first--list li {
+  margin-left: 2rem;
 }
 .intro--blurb .prog--list {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
+  margin-top: 10px;
+}
+.intro--blurb .prog--list li:before {
+  position: absolute;
+  left: -15px;
+  width: 25px;
+  height: 25px;
+  content: url("./src/icons/20soccer.png");
+}
+.intro--blurb .prog--list li:nth-child(2n):before {
+  content: url("./src/icons/20science.png");
+}
+.intro--blurb .prog--list li:nth-child(3n):before {
+  content: url("./src/icons/20fish.png");
+}
+
+.intro--blurrr {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  width: 400px;
+  height: 300px;
 }
 
 .landing--girl {
@@ -269,6 +401,10 @@ ul {
   text-align: center;
   font-family: var(--header-font);
   font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+.cta--lg:hover {
+  scale: 1.1;
 }
 
 .camp--updates {
@@ -280,7 +416,7 @@ ul {
 }
 .camp--updates .pop--up {
   position: absolute;
-  top: -40%;
+  top: -60%;
   left: 10px;
   width: 150px;
   height: 200px;
@@ -298,6 +434,7 @@ ul {
   z-index: 5;
   width: 100%;
   height: 100%;
+  margin: 0;
   padding: 1rem 2rem;
   border: 3px solid rgb(107, 68, 4);
   border-radius: 10px;
@@ -307,7 +444,7 @@ ul {
 }
 .camp--updates .flex--index.unfaded {
   opacity: 0;
-  transform: scaleY(100px);
+  margin-top: 200px;
 }
 
 .unfaded {
@@ -315,13 +452,191 @@ ul {
   transform: scaleY(100px);
 }
 
-.pop--in-container {
-  background-color: lawngreen;
-  width: 70%;
-  min-height: 300px;
-  transition: all 1s ease-out;
+.sub--ocean {
+  background-color: rgba(0, 63, 124, 0.95);
+  margin: 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+}
+.sub--ocean h2 {
+  color: rgb(255, 254, 242);
+  margin: 1rem;
 }
 
+.pop--in-container {
+  position: relative;
+  width: 70%;
+  min-height: 300px;
+  background-image: url("./src/images/rotpop1.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease-out;
+}
+.pop--in-container .pop--in-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20%;
+}
+.pop--in-container .pop--in-center .reviews {
+  width: 60%;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(255, 254, 242);
+  font-size: 1rem;
+  animation: fadequotes 6s ease-in-out infinite;
+}
+.pop--in-container .pop--in-left {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 300px;
+  height: 100%;
+  max-height: 400px;
+  transition: all 2s ease-out;
+  background-image: url("./src/images/zrot2.png");
+  background-size: cover;
+  background-position: center;
+}
+.pop--in-container .pop--in-right {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 300px;
+  height: 100%;
+  max-height: 400px;
+  transition: all 2s ease-out;
+  background-image: url("./src/images/zrot1.png");
+  background-size: cover;
+  background-position: center;
+}
+.pop--in-container.unpopped .pop--in-left {
+  left: -100vw;
+}
+.pop--in-container.unpopped .pop--in-right {
+  right: -100vw;
+}
+
+.check--out {
+  position: relative;
+  padding: 2rem 12rem 100px 12rem;
+  height: 200px;
+  font-size: 1.5rem;
+}
+
+.cloud1 {
+  position: absolute;
+  top: -50px;
+  width: 80px;
+  height: 80px;
+  background-image: url("./src/icons/c3.png");
+  background-size: cover;
+  animation: boat 30s linear 0s infinite reverse;
+}
+
+.cloud2 {
+  position: absolute;
+  top: -50px;
+  width: 80px;
+  height: 80px;
+  background-image: url("./src/icons/c3.png");
+  background-size: cover;
+  animation: boat 30s linear 2s infinite forwards;
+}
+
+.cloud3 {
+  position: absolute;
+  top: -50px;
+  width: 80px;
+  height: 80px;
+  background-image: url("./src/icons/c3.png");
+  background-size: cover;
+  animation: cloud2 30s linear 0s infinite reverse;
+}
+
+.cloud4 {
+  position: absolute;
+  top: -50px;
+  width: 80px;
+  height: 80px;
+  background-image: url("./src/icons/c3.png");
+  background-size: cover;
+  animation: cloud1 30s linear 0s infinite alternate;
+}
+
+.sun {
+  position: absolute;
+  top: -50px;
+  z-index: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url("./src/images/rotsun.png");
+  background-size: cover;
+  animation: sun 30s linear 0s infinite alternate;
+}
+
+.boat {
+  position: absolute;
+  top: -70px;
+  width: 80px;
+  height: 80px;
+  background-image: url("./src/images/rotboat.png");
+  background-size: cover;
+  animation: cloud2 40s linear 0s infinite forwards;
+}
+
+@keyframes boat {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes sun {
+  0% {
+    left: 45%;
+  }
+  100% {
+    left: 55%;
+  }
+}
+@keyframes cloud1 {
+  0% {
+    left: 40%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+@keyframes cloud2 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 70%;
+  }
+}
+@keyframes fadequotes {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 .card--table {
   position: absolute;
   z-index: 50;
@@ -438,8 +753,7 @@ ul {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 500px;
-  background-color: brown;
+  height: 1200px;
   transition: top 1s linear;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -449,10 +763,12 @@ ul {
 .gallery--case .video--case {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 16px;
+  font-family: var(--header-font);
 }
 .gallery--case .video--case iframe {
   width: 560px;
@@ -460,8 +776,6 @@ ul {
 }
 .gallery--case .gallery--gram {
   width: 100%;
-  max-height: 50vh;
-  border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -719,39 +1033,67 @@ ul {
   transition: grid-template-rows 500ms;
 }
 
+.accordion--header-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.accordion--header {
+  width: 500px;
+  height: 400px;
+  background-image: url("./src/images/rotarysign.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
 .accordion-content[aria-hidden=false] {
   grid-template-rows: 1fr;
 }
 
 .accordion-content > div {
   overflow: hidden;
-}
-
-/* other styles */
-body {
-  font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
 }
+.accordion-content > div p {
+  font-size: 1rem;
+}
+
+.form--link {
+  width: 100px;
+  height: 120px;
+  border: 1px solid black;
+  background-color: aliceblue;
+}
 
 .wrapper {
-  width: min(65ch, 100% - 4rem);
   margin-inline: auto;
 }
 
 .accordion {
-  background: #121212;
-  color: #effeef;
-  padding: 1rem;
+  background: rgb(244, 218, 185);
+  color: black;
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+.accordion h1 {
+  margin: 1rem 0;
 }
 
 .accordion-panel {
+  background-color: var(--background-color);
   padding: 1rem;
   border: 1px solid;
 }
 
 .accordion h2 {
   position: relative;
+  font-size: 1.5rem;
 }
 
 .accordion-trigger {
@@ -759,6 +1101,9 @@ body {
   border: 0;
   font: inherit;
   color: inherit;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .accordion-trigger::before,
@@ -788,13 +1133,196 @@ body {
   background-size: cover;
 }
 
+.ocean--box {
+  width: 100%;
+  height: 200px;
+  background-color: pink;
+}
+
+/* waves */
+.ocean {
+  position: relative;
+  min-height: 80px; /* change the height of the waves here */
+  width: 100%;
+  background-color: rgb(255, 254, 242);
+  overflow-x: hidden;
+}
+
+.wave {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23003F7C'/%3E%3C/svg%3E");
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(2) {
+  bottom: 0;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.5;
+}
+
+.wave:nth-of-type(3) {
+  bottom: 0;
+  animation: wave 20s -1s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.font--up {
+  font-family: var(--header-font);
+  background-color: yellow;
+}
+.font--up:hover {
+  font-size: 1.8rem;
+}
+
+.intro--sheet {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.gear--box {
+  position: absolute;
+  top: calc(50vh - 150px);
+  left: -450px;
+  width: 300px;
+  height: 400px;
+  display: grid;
+  grid-template-rows: 300px 100px;
+  justify-items: center;
+  animation: rotating 6s linear 1s forwards;
+}
+.gear--box .logo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  animation: jumping 6s linear 1s forwards;
+}
+.gear--box .logo .logo--spoke {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("./src/images/rotarylogosplit-inner.png");
+  background-size: contain;
+}
+.gear--box .logo .logo--wheel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("./src/images/rotarylogosplit-outer.png");
+  background-size: contain;
+  animation: wheeling 3s linear 1s forwards;
+}
+.gear--box .title--box {
+  position: relative;
+  width: 180px;
+  height: 50px;
+  overflow: hidden;
+}
+.gear--box .title {
+  position: absolute;
+  top: 100%;
+  margin: auto;
+  font-size: 2rem;
+  animation: reveal 6s linear 1s forwards;
+}
+
+@keyframes rotating {
+  0% {
+    left: -450px;
+    top: calc(50vh - 150px);
+  }
+  50% {
+    left: calc(50vw - 150px);
+    top: calc(50vh - 150px);
+  }
+  94% {
+    left: calc(50vw - 150px);
+    top: calc(50vh - 150px);
+  }
+  100% {
+    left: calc(50vw - 150px);
+    top: -500px;
+  }
+}
+@keyframes jumping {
+  0% {
+    transform: scaleY(100%);
+  }
+  50% {
+    transform: scaleY(100%);
+  }
+  85% {
+    transform: translateY(0) scaleY(100%);
+  }
+  90% {
+    transform: translateY(10px) scaleY(95%);
+  }
+  94% {
+    transform: translateY(0) scaleY(105%);
+  }
+  100% {
+    transform: translateY(0) scaleY(105%);
+  }
+}
+@keyframes wheeling {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes reveal {
+  0% {
+    top: 100%;
+  }
+  55% {
+    top: 100%;
+  }
+  70% {
+    top: 0;
+  }
+  92% {
+    top: 0;
+  }
+  94% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
 .site--shell {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-areas: "head" "body" "footer";
   grid-template-rows: 150px 1fr 100px;
+  grid-template-areas: "head" "body" "footer";
+  background-color: var(--background-color);
+  overflow: hidden;
+  transition: grid-template-rows 0.6s linear;
+}
+.site--shell.over--grown {
+  grid-template-rows: 400px 1fr 100px;
 }
 
 .header {
@@ -804,6 +1332,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./src/images/camplake.jpeg");
+  background-size: cover;
+  background-position: center;
+  transition: all 1.4s ease-out;
 }
 
 .content--shell {
@@ -822,10 +1354,10 @@ body {
 
 .trees {
   position: sticky;
-  bottom: 0;
+  bottom: -50px;
   width: 100%;
   min-height: 150px;
-  background-image: url("./src/images/treesblue.png");
+  background-image: url("./src/images/trees.png");
 }
 
 .lift--and-drop {
@@ -839,9 +1371,4 @@ body {
   100% {
     transform: translateY(100vh) rotate(20deg);
   }
-}
-.exam {
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
 }/*# sourceMappingURL=index.css.map */

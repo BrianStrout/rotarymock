@@ -10,7 +10,7 @@
   --main-text: "";
   --sub-text: "";
   --accent-color: #fff700;
-  --background-color: rgb(5, 255, 255);
+  --background-color: rgb(255, 254, 242);
   --ghost-color: rgb(230, 232, 223);
   --moody-background-color: rgb(100, 173, 173);
   --textcolor: black;
@@ -93,6 +93,7 @@ ul {
   }
   &.offset--left {
     transform: translateX(-100vw);
+    height: 0;
   }
   &.offset--right {
     transform: translateX(100vw);
